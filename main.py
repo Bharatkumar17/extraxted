@@ -58,22 +58,30 @@ if __name__ == "__main__" :
         plugins=plugins,
         workers = 50
     )
+bot = Client(
+    "my_bot",
+    api_id=26729193,       # Replace with your API ID
+    api_hash="a94598ef642481e35466292df95f251e",  # Replace with your API Hash
+    bot_token="7246658062:AAFihBmIU_oShvmhz1f-r8Rxu4dCt4Y950A"  # <-- Replace with the new token
+)
+
 async def main():
     try:
         await bot.start()
         bot_info = await bot.get_me()
-        LOGGER.info(f"<--- @{bot_info.username} Started (c) STARKBOT --->")
-        await idle()
+        print(f"Bot started: @{bot_info.username}")
+        await idle()  # Keeps the bot running
     except Exception as e:
-        LOGGER.error(f"Bot crashed with error: {e}")
+        print(f"Error: {e}")
     finally:
-        await bot.stop()
-        LOGGER.info("<---Bot Stopped--->")
+        if await bot.is_initialized():  # Check if bot is running before stopping
+            await bot.stop()
+        print("Bot stopped")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        LOGGER.info("Bot stopped by user")
+        print("Bot stopped by user")
     except Exception as e:
-        LOGGER.error(f"Unexpected error: {e}")
+        print(f"Unexpected error: {e}")
