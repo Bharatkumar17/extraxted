@@ -8,17 +8,17 @@
         "pyrogram"
     ],
     "env": {
-            "API_ID": {26729193
+            "API_ID": {"26729193"
             "description": "Your API_ID from https://my.telegram.org/apps",
             "value": "",
             "required": true
         },
-        "API_HASH": {a94598ef642481e35466292df95f251e
+        "API_HASH": {"a94598ef642481e35466292df95f251e"
             "description": "Your API_HASH from https://my.telegram.org/apps",       
             "value": "",
             "required": true
         },
-        "BOT_TOKEN": {7246658062:AAFihBmIU_oShvmhz1f-r8Rxu4dCt4Y950A
+        "BOT_TOKEN": {"7246658062:AAFihBmIU_oShvmhz1f-r8Rxu4dCt4Y950A"
             "description": "Your Bot token from @Botfather",
             "value": "",
             "required": true
