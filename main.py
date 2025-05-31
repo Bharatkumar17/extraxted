@@ -59,27 +59,11 @@ if __name__ == "__main__" :
         plugins=plugins,
         workers = 50
     )
-import asyncio
-from pyrogram import Client
-
 async def main():
-    bot = Client(
-        "my_bot",  # Session name
-        bot_token="7246658062:AAFihBmIU_oShvmhz1f-r8Rxu4dCt4Y950A"  # ← Add your bot token here
-    )
-    
-    try:
-        await bot.start()
-        print("Bot started successfully!")
-        
-        # Your bot logic here
-        # Example: print bot info
-        me = await bot.get_me()
-        print(f"Bot username: @{me.username}")
-        
-        await bot.stop()
-    except Exception as e:
-        print(f"Error: {e}")
+    await bot.start()
+    bot_info = await bot.get_me()
+    LOGGER.info(f"<--- @{bot_info.username} Started (c) STARKBOT --->")
+    await idle()
 
-if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(main())
+asyncio.get_event_loop().run_until_complete(main())
+LOGGER.info("<---Bot Stopped--->")
