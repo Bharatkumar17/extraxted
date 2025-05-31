@@ -20,7 +20,15 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #  SOFTWARE
 
+# main.py में यह जोड़ें
+from fastapi import FastAPI
+app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"status": "Bot is running!"}
+
+# बाकी बॉट कोड...
 import os
 from config import Config
 from pyrogram import Client, idle
