@@ -59,12 +59,15 @@ if __name__ == "__main__" :
         plugins=plugins,
         workers = 50
     )
-    
-    async def main():
+async def main():
+    bot = Client("my_bot")
+    try:
         await bot.start()
-        bot_info  = await bot.get_me()
-        LOGGER.info(f"<--- @{bot_info.username} Started (c) STARKBOT --->")
-        await idle()
-    
-    asyncio.get_event_loop().run_until_complete(main)
-    LOGGER.info(f"<---Bot Stopped-->")
+        print("Bot started successfully!")
+        # Your bot logic here
+        await bot.stop()
+    except Exception as e:
+        print(f"Error: {e}")
+
+if __name__ == "__main__":
+    asyncio.get_event_loop().run_until_complete(main())  # Note the parentheses
