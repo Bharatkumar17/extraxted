@@ -62,7 +62,7 @@ bot = Client(
     "my_bot",
     api_id=26729193,       # Replace with your API ID
     api_hash="a94598ef642481e35466292df95f251e",  # Replace with your API Hash
-    bot_token="7246658062:AAFihBmIU_oShvmhz1f-r8Rxu4dCt4Y950A"  # <-- Replace with the new token
+    bot_token="7706795279:AAE_KSUZaElgXpN3lVura8GD6OXZWr0-lGM"  # <-- Replace with the new token
 )
 
 async def main():
