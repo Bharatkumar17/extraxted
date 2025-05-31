@@ -21,12 +21,6 @@
 #  SOFTWARE
 
 # main.py में यह जोड़ें
-from fastapi import FastAPI
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"status": "Bot is running!"}
 
 # बाकी बॉट कोड...
 import os
